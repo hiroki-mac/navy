@@ -1,4 +1,4 @@
-# navy
+# NAVY
 Julia library for N-dimensional data Analysis and Visualization using YAXarrays and Makie
 
 ## Dependence
@@ -24,17 +24,19 @@ Julia library for N-dimensional data Analysis and Visualization using YAXarrays 
 *input*
 - `var` is a 2D YAXArray object (or 3D if animation) loaded by `open_nc()`
 - `:plot_type` should be `:heatmap`, `:contourf`, `:contour`, or `:surface`
-- options:
-  - `aspect`
-  - `crange`
-  - `cmap`
-  - `anim`
-  - `aint`
-  - `asave`
-  - `map`
-  - `mdest`
-  - `xrange`
-  - `yrange`
+- options [default]:
+  - `aspect`: aspect ration of the plot [2]
+  - `crange`: range of color tone or contours [nothing]
+  - `cmap`: colormap [:jet]
+    - colormap list: https://docs.makie.org/stable/explanations/colors#Colormaps
+  - `anim`: axis for animation [false]
+  - `aint`: time-interval for animation [0.2]
+  - `asave`: file name for saving animation [false]
+  - `map`: flag for map projection [false]
+    - list: https://proj.org/en/stable/operations/projections/all_images.html
+  - `mdest`: key strings for map projection [*proj=ortho]
+  - `xrange`: range for x axis [nothing]
+  - `yrange`: range for y axis [nothing]
 
 *output*
 - `fig`: Figure object
@@ -49,18 +51,18 @@ Julia library for N-dimensional data Analysis and Visualization using YAXarrays 
 - `var` is a 1D YAXArray object (or 2D if animation) loaded by `open_nc()`
 - `:plot_type` should be `:lines`
 - options:
-  - `aspect`
-  - `exch`
-  - `xrange`
-  - `yrange`
-  - `xscale`
-  - `yscale`
-  - `anim`
-  - `aint`
-  - `asave`
-  - `labels`
-  - `legend`
-    
+  - `aspect`: aspect ration of the plot [2]
+  - `exch`: exchange x and y axes [false]
+  - `xrange`: range for x axis [nothing]
+  - `yrange`: range for y axis [nothing]
+  - `xscale`: scale for x axis [identity]
+  - `yscale`: scale for y axis [identity]
+  - `anim`: axis for animation [false]
+  - `aint`: time-interval for animation [0.2]
+  - `asave`: file name for saving animation [false]
+  - `labels`: label for each plot [false]
+  - `legend`: position of the legend [:rb]
+     
 *output*
 - `fig`: Figure object
 - `ax`: Axis object
@@ -75,17 +77,17 @@ Julia library for N-dimensional data Analysis and Visualization using YAXarrays 
 - `var2` is a 2D YAXArray object (or 3D if animation) for y-component of vectors loaded by `open_nc()`
 - `:plot_type` should be `:arrows2d` or `streamplot`
 - options:
-  - `aspect`
-  - `exch`
-  - `anim`
-  - `aint`
-  - `asave`
-  - `map`
-  - `skip`
-  - `scale`
-  - `xrange`
-  - `yrange`
-  - `cmap`
+  - `aspect`: aspect ration of the plot [2]
+  - `exch`: exchange x and y axes [false]
+  - `anim`: axis for animation [false]
+  - `aint`: time-interval for animation [0.2]
+  - `asave`: file name for saving animation [false]
+  - `map`: map projection [false]
+  - `skip`: interval for picking data to use [4]
+  - `scale`: scale for arrows
+  - `xrange`: range for x axis [nothing]
+  - `yrange`: range for y axis [nothing]
+  - `cmap`: colormap [:viridis]
 
 *output*
 - `fig`: Figure object
